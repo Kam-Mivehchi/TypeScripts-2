@@ -61,18 +61,18 @@ const TypingGameDemo: FC<{ text: string }> = ({ text }) => {
 
     return (
 
-        <div className="h-full  max-w-screen">
-
+        <div className="max-h-full  ">
+            <p className="my-6">Click on the text below and start typing</p>
             <div
 
-                className="typing-test flex center"
+                className="typing-test flex "
                 onKeyDown={(e) => {
                     handleKey(e.key);
                     e.preventDefault();
                 }}
                 tabIndex={0}
             >
-                <pre>
+                <pre className='text-center mt-6'>
                     {text.split("").map((char: string, index: number) => {
                         let state = charsState[index];
                         let color =
@@ -85,7 +85,7 @@ const TypingGameDemo: FC<{ text: string }> = ({ text }) => {
                             <span
                                 key={char + index}
                                 style={{ color }}
-                                className={currIndex + 1 === index ? "curr-letter" : ""}
+                                className={`${currIndex + 1 === index ? "curr-letter" : ""} text-2xl `}
                             >
                                 {char}
                             </span>

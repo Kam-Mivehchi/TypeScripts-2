@@ -36,7 +36,7 @@ const Type = () => {
                     setStage(() => {
                         return (
                             <>
-                                <button onClick={() => setStage(home)} className="border px-8 py-1 mt-16 text-center m-2 bg-indigo-500  md:w-1/8 text-white rounded  transition ease-in-out   hover:-translate-y-1 hover:scale-110 hover:bg-pink-500 hover:text-white duration-300">Back</button>
+                                <button onClick={() => setStage(home)} className="border px-8 py-1 mt-14 text-center m-2 bg-indigo-500  md:w-1/8 text-white rounded  transition ease-in-out   hover:-translate-y-1 hover:scale-110 hover:bg-pink-500 hover:text-white duration-300">Back</button>
                                 <Test2 className='min-h-screen' text={`${text}`} />
 
                                 {/* <Test /> */}

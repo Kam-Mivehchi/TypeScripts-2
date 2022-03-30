@@ -2,7 +2,15 @@ const { Prompt } = require('../models');
 
 const promptData = [
     {
-        prompt: "// Declare a variable called person with a specific object type annotation\nlet person: {\n name: string;\nlocation: string;\nisProgrammer: boolean;\n};\n\n// Assign person to an object with all the necessary properties and value types\nperson = {\nname: 'Danny',\nlocation: 'UK',\nisProgrammer: true,\n};\n\nperson.isProgrammer = 'Yes'; // ERROR: should be a boolean\n\nperson = {\nname: 'John',\nlocation: 'US',\n}; // ERROR: missing the isProgrammer property",
+        prompt: "// Declare a variable called person with a specific object type annotation\nlet person: {\n name: string;\nlocation: string;\nisProgrammer: boolean;\n};",
+        language_id: 1, //typescript
+    },
+    {
+        prompt: "// Assign person to an object with all the necessary properties and value types\nperson = {\nname: 'Danny',\nlocation: 'UK',\nisProgrammer: true,\n};",
+        language_id: 1, //typescript
+    },
+    {
+        prompt: "// person.isProgrammer = 'Yes'; // ERROR: should be a boolean\nperson = {\nname: 'John',\nlocation: 'US',\n}; // ERROR: missing the isProgrammer property",
         language_id: 1, //typescript
     },
     {
@@ -15,7 +23,7 @@ const promptData = [
     },
     {
         prompt: `// The following variables are defined in the global scope\nvar num1 = 20,\nnum2 = 3,\nname = 'John';\n// This function is defined in the global scope\nfunction multiply() {\nreturn num1 * num2;\n}\nmultiply(); // Returns 60\n// A nested function example\nfunction getScore() {\nvar num1 = 2,\nnum2 = 3;\nfunction add() {\nreturn name + ' scored ' + (num1 + num2);\n}\nreturn add();\n}\ngetScore(); // Returns "John scored 5"\n`,
-        language_id: 2, 
+        language_id: 2,
     },
     {
         prompt: "<!DOCTYPE html>\n<html>\n<head>\n<title>Page Title</title>\n</head>\n<body>\n<h1>This is a Heading</h1>\n<p>This is a paragraph.</p>\n</body>\n</html>",
@@ -26,7 +34,7 @@ const promptData = [
         language_id: 3,
     },
     {
-        prompt: "The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon. Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.\np {\ncolor: red;\ntext-align: center;\n}",
+        prompt: "The selector points to the HTML element you want to style.  Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.\np {\ncolor: red;\ntext-align: center;\n}",
         language_id: 4, //css
     },
     {
@@ -39,15 +47,15 @@ const promptData = [
     },
     {
         prompt: "Always code as if the person who ends up maintaining your code will be a violent psychopath who knows where you live.",
-        language_id: 5, 
+        language_id: 5,
     },
     {
         prompt: "Software and cathedrals are much the same — first we build them, then we pray.",
-        language_id: 5, 
+        language_id: 5,
     },
     {
         prompt: "It's not a bug... it's an undocumented feature.",
-        language_id: 5, 
+        language_id: 5,
     },
 ];
 

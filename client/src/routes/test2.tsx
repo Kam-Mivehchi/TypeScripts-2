@@ -3,7 +3,7 @@ import useTypingGame, {
     CharStateType,
     PhaseType
 } from "react-typing-game-hook";
-import Type from './type'
+// import Type from './type'
 import "./styles.css";
 import Results from './results'
 let Color = require('color');
@@ -12,24 +12,24 @@ const TypingGameDemo: FC<{ text: string }> = ({ text }) => {
 
     const [wordCount, setWordCount] = useState(0)
     // let text = "The quick brown fox jumps over the lazy dog";
-    const countWords = (str) => {
-        const spaceArray = str.split('').filter(a => a === ' ')
-        setWordCount(spaceArray.length + 1)
-        return wordCount
+    // const countWords = (str) => {
+    //     const spaceArray = str.split('').filter(a => a === ' ')
+    //     setWordCount(spaceArray.length + 1)
+    //     return wordCount
 
-    }
+    // }
 
     const {
         states: {
             charsState,
-            length,
+            // length,
             currIndex,
-            currChar,
+            // currChar,
             correctChar,
             errorChar,
             phase,
-            startTime,
-            endTime,
+            // startTime,
+            // endTime,
 
         },
         actions: { insertTyping, resetTyping, deleteTyping, getDuration }

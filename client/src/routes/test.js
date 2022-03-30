@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import randomWords from 'random-words'
-import Results from './results'
+// import Results from './results'
 //vars for number of words and time in seconds
 const numberOfWords = 20
 const seconds = 60

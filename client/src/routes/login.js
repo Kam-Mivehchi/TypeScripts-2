@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, } from 'react'
 import Axios from 'axios'
-import Type from './type';
+// import Type from './type';
 import { Navigate } from 'react-router';
 const Login = () => {
 
@@ -12,7 +12,7 @@ const Login = () => {
     Axios.defaults.withCredentials = true;
 
     async function Login({ credentials }) {
-        Axios.post("http://localhost:3001/users/login", {
+        Axios.post("/users/login", {
             username: username,
             password: password
         }).then((response) => {
@@ -27,7 +27,7 @@ const Login = () => {
     };
 
     async function Register({ credentials }) {
-        Axios.post("http://localhost:3001/users/register", {
+        Axios.post("/users/register", {
             username: username,
             password: password
         }).then((response) => {
@@ -35,7 +35,7 @@ const Login = () => {
             if (response.status === 200) {
 
                 setLoginStatus("Registered Successfully, Please Login");
-                Login({username, password})
+                Login({ username, password })
             }
         })
     };

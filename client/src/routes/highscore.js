@@ -6,14 +6,14 @@ const HighScore = () => {
     const [highscores, setHighscores] = useState([])
 
     const getScores = () => {
-    axios.get('http://localhost:3001/api/highscores', {})
-        .then((response) => {
+        axios.get('http://localhost:3001/api/highscores', {})
+            .then((response) => {
                 console.log(response.data)
                 let scores = response.data
                 return scores
-        }).then((scores) =>{
-            setHighscores(scores)
-        })
+            }).then((scores) => {
+                setHighscores(scores)
+            })
     }
 
     React.useEffect(() => getScores(), []);
@@ -21,12 +21,12 @@ const HighScore = () => {
     const column = [
         { heading: 'Username', value: 'User.username' },
         { heading: 'Score', value: 'score' },
-      ]
-    
+    ]
+
 
     return (
         <div className="App">
-        <Table data={highscores} column={column} />
+            <Table data={highscores} column={column} />
 
         </div>
     )

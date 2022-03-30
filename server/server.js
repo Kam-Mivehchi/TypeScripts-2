@@ -1,5 +1,5 @@
 // Dependancies
-const createError = require('http-errors');
+
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
 
-const hbs = require('express-handlebars');
+
 const sequelize = require('sequelize');
 const seq = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
@@ -17,19 +17,17 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const promptsRouter = require('./routes/prompts');
 
-const corsOptions ={
-  origin:'http://localhost:3000', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true,            //access-control-allow-credentials:true
+  optionSuccessStatus: 200
 }
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-app.engine('hbs', hbs.engine({ extname: 'hbs', defaultLayout: 'layout/main', layoutsDir: __dirname + '/views/' }));
+// 
 
 const sess = {
   secret: 'super-secret',
@@ -48,7 +46,7 @@ app.use(session(sess))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('public')));
 app.use(cors(corsOptions));
 
 app.use('/', indexRouter);

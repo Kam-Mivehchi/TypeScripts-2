@@ -18,6 +18,8 @@ const Results = (props) => {
     // }
     let userId = sessionStorage.getItem("userId")
     console.log(userId)
+    console.log(props.phase)
+    console.log(props)
     if (props.phase === 'Ended' && userId) {
         Axios.post("http://localhost:3001/highscores", {
             score: score,

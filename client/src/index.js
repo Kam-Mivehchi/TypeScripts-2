@@ -8,6 +8,7 @@ import Login from './routes/login'
 import Type from './routes/type'
 import Highscore from './routes/highscore'
 import { AnimatedSwitch } from 'react-router-transition';
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>

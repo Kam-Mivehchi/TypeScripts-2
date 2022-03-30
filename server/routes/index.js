@@ -49,7 +49,7 @@ router.post("/highscores", async function (req, res) {
   console.log("YOUR SESSION", req.session);
   if (!req.session.userId) {
     return res.json({ message: 'No User Id Found!'})
-  }
+  } else
   console.log("payload ", req.body)
   //save HS in db here....
   const score = await Scores.create({ user_id: req.session.userId, score: Number(req.body.score) })

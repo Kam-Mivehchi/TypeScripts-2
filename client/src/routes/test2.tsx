@@ -1,4 +1,4 @@
-import { FC, } from "react";
+import { FC } from "react";
 import useTypingGame, {
     CharStateType,
     PhaseType
@@ -94,7 +94,7 @@ const TypingGameDemo: FC<{ text: string }> = ({ text }) => {
                 </pre>
             </div>
 
-            <Results phase={PhaseType[phase]} speedClass={PhaseType[phase] === 'Ended' ? 'flex' : 'hidden'} wordsTyped={Math.round(wordCount / (getDuration()) * 1000 * 60)} accClass={PhaseType[phase] !== 'NotStarted' ? 'flex' : 'hidden'} speed={Math.round((currIndex + 1) / (getDuration()) * 1000 * 60)} accuracy={Math.round((correctChar / (correctChar + errorChar)) * 100)} errors={errorChar} />
+            <Results phase={PhaseType[phase]} speedClass={PhaseType[phase] === 'Ended' ? 'flex' : 'hidden'} accClass={PhaseType[phase] !== 'NotStarted' ? 'flex' : 'hidden'} speed={Math.round((currIndex + 1) / (getDuration()) * 1000 * 60)} accuracy={Math.round((correctChar / (correctChar + errorChar)) * 100)} errors={errorChar} />
 
         </div>
     );
